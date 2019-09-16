@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'VictorMono';
+    font-style: normal;
+    font-weight: 400;
+    src: url('VictorMono-Italic.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'VictorMono';
+    font-style: normal;
+    font-weight: 700;
+    src: url('VictorMono-SemiBoldItalic.ttf') format('truetype');
+  }
+  
