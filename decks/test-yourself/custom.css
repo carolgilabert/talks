@@ -11,7 +11,7 @@ body {
 }
 
 .reveal .controls button {
-  color: #fff;
+  color: #032b43;
 }
 
 .reveal {
@@ -22,14 +22,11 @@ body {
   align-items: center;
 }
 
-.slides {
+.reveal .slides section {
   background-color: #032b43;
   border-radius: 5px;
   padding: 20px;
   box-shadow: 12px 12px 2px 1px rgba(76, 96, 133, 0.6);
-}
-
-.reveal .slides section {
   height: 100%;
   box-sizing: border-box;
 }
@@ -49,6 +46,46 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+.reveal .slides section .content-box ol {
+  list-style-position: inside;
+}
+
+.reveal .slides section .content-box li::marker {
+  color: #ffba08;
+  text-shadow: 2px 2px #3f88c5;
+}
+
+.reveal .slides section .content-box a {
+  color: inherit;
+}
+
+.reveal .slides section .tiles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.reveal .slides section .tile {
+  background-color: #ffba08;
+  max-width: 50%;
+  margin: 10px;
+}
+
+.reveal .slides section .tile p {
+  margin: 10px;
+  color: #032b43;
+}
+
+.reveal .slides section img {
+  margin: 3px;
+  max-width: -moz-available;
+  max-width: -webkit-fill-available;
+  max-width: fill-available;
+  max-height: inherit;
 }
 
 .reveal .slides section .twitter-handle {

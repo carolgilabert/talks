@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
 
-    <title>Panic Driven Development</title>
+    <title>Test yourself before you wreck yourself</title>
 
     <link rel="stylesheet" href="../../css/reveal.css" />
     <link rel="stylesheet" href="custom.css" />
@@ -62,8 +62,199 @@
           </section>
           <section>
             <div class="content-box">
-              <h1 class="shaded">Content goes here</h1>
-              <p>Content goes here</p>
+              <h1 class="shaded">Why do I care?</h1>
+              <div class="tiles">
+                <div class="fragment tile">
+                  <p>It's a safety net</p>
+                  <img
+                    src="img/net.gif"
+                    alt="gif of person with vr headset trapped in a net"
+                  />
+                </div>
+                <div class="fragment tile">
+                  <p>Breezy refactoring</p>
+                  <img
+                    src="img/breezy.gif"
+                    alt="gif of cow with a wig blowing in the breeze"
+                  />
+                </div>
+              </div>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div
+              class="content-box"
+              style="justify-content: center; align-items: center;"
+            >
+              <blockquote
+                class="twitter-tweet"
+                data-lang="en"
+                data-theme="dark"
+              >
+                <p lang="en" dir="ltr">
+                  Why are tests important?<br /><br />This is what happened with
+                  what I thought was a simple change. Turns out I had put
+                  something on the wrong side of an `if` statement, and it only
+                  broke under certain conditions.<br /><br />It did not generate
+                  any language errors, and none of my linters complained.
+                  <a href="https://t.co/uwGg1jQoKI"
+                    >pic.twitter.com/uwGg1jQoKI</a
+                  >
+                </p>
+                &mdash; Chris Tankersley (@dragonmantank)
+                <a
+                  href="https://twitter.com/dragonmantank/status/1184158104981778433?ref_src=twsrc%5Etfw"
+                  >October 15, 2019</a
+                >
+              </blockquote>
+              <script
+                async
+                src="https://platform.twitter.com/widgets.js"
+                charset="utf-8"
+              ></script>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Test Pyramid</h1>
+              <div>
+                <img
+                  src="img/test-pyramid.png"
+                  alt="test pyramid from Mike Cohn's Succeeding with Agile book"
+                />
+              </div>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <p>
+                Your best bet is to remember two things from Cohn’s original
+                test pyramid:
+              </p>
+              <ol>
+                <li>Write tests with different granularity</li>
+                <li>
+                  The more high-level you get the fewer tests you should have
+                </li>
+              </ol>
+              <a
+                target="_blank"
+                href="https://martinfowler.com/articles/practical-test-pyramid.html#TheTestPyramid"
+                >🔗 The Practical Test Pyramid - Ham Vocke</a
+              >
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded" style="flex:0;">Test Ice Cream Cone</h1>
+              <div style="flex:1;">
+                <img
+                  src="img/testing-icecream-cone.jpg"
+                  alt="test ice cream cone"
+                  style="max-height: 500px;"
+                />
+              </div>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">What do you care about?</h1>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Find the right tools</h1>
+              <ul>
+                <li class="fragment">Prettier</li>
+                <li class="fragment">ESLint</li>
+                <li class="fragment">Jest</li>
+                <li class="fragment">Cypress</li>
+              </ul>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Disclaimer:</h1>
+              <p>Your mileage may vary.</p>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Code Formatting:</h1>
+              <p>
+                It lets you stop arguing about style while having consistent
+                code, in a nutshell.
+              </p>
+              <a
+                href="https://prettier.io/docs/en/why-prettier.html"
+                target="_blank"
+                >🔗 Why Prettier?</a
+              >
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Linting:</h1>
+              <p>
+                It lets you enforce coding principles throughout your codebase,
+                to make your code more readable and avoig bugs.
+              </p>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Prettier + ESLint = 💛</h1>
+              <p>
+                Also, config is hard, so use someone else's if you can and
+                adjust as needed 😅
+              </p>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Unit testing</h1>
+              <div>
+                <img
+                  src="img/jest.png"
+                  alt="jest logo"
+                  style="max-height: 100px;"
+                />
+                <p>Jest</p>
+              </div>
+              <p>
+                Modern tool, does a lot out of the box - assertion library,
+                coverage, mocking, snapshots.
+              </p>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">🔥 Hot take 🔥</h1>
+              <p class="fragment">
+                I'm not a big fan of snapshot testing, it makes developers
+                complacent and inattentive.
+              </p>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">T 👏 D 👏 D 👏</h1>
+              <p class="fragment">
+                Yes, friends. Get ready for some indoctrination.
+              </p>
             </div>
             <p class="twitter-handle">@CarolSaysThings</p>
           </section>
@@ -102,7 +293,8 @@
             }
           }
         ],
-        slideNumber: true
+        slideNumber: true,
+        history: true
       });
     </script>
   </body>
