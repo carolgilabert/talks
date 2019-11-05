@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Test yourself before you wreck yourself</title>
+
+    <link rel="stylesheet" href="../../css/reveal.css" />
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? "../../css/print/pdf.css"
+        : "../../css/print/paper.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
+  </head>
+
+  <body>
+    <div style="width: 100%; height: 100%;">
+      <div class="reveal">
+        <div class="slides">
+          <section>
+            <div class="content-box">
+              <div
+                style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;"
+              >
+                <h1 class="shaded">Hi! I'm Carol</h1>
+                <div>
+                  <img
+                    style="border-radius: 50%"
+                    src="img/favicon.svg"
+                    width="150px"
+                    alt="Photo of Carol"
+                  />
+                </div>
+              </div>
+              <h2>
+                I'm a frontend software engineer <br />
+                at Capital One.
+              </h2>
+            </div>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">
+                <s>Check</s> Test yourself before you wreck yourself
+              </h1>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">
+                These slides
+              </h1>
+              <div
+                style="width: 310px; height: 310px; padding: 5px; border-radius: 10px; background-color: white; align-self: center;"
+              >
+                <img
+                  src="img/qrcode.png"
+                  alt="qrcode pointing to the link below"
+                  width="300px"
+                  height="300px"
+                />
+              </div>
+              <a
+                href="https://talks.carolgilabert.me/decks/test-yourself/"
+                style="font-size: 0.7rem;"
+                >https://talks.carolgilabert.me/decks/test-yourself/</a
+              >
+            </div>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">
+                Expectation setting
+              </h1>
+              <ul>
+                <li class="fragment">I'm not an expert</li>
+                <li class="fragment">Open questions at the end</li>
+                <li class="fragment">
+                  If I say anything you don't understand, feel free to ask at
+                  any point
+                </li>
+              </ul>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">
+                Agenda
+              </h1>
+              <ul>
+                <li class="fragment">Why I care</li>
+                <li class="fragment">Designing your testing strategy</li>
+                <li class="fragment">Some types of testing and tools</li>
+              </ul>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Why do I care?</h1>
+              <div class="tiles">
+                <div class="fragment tile">
+                  <p>It's a safety net</p>
+                  <img
+                    src="img/net.gif"
+                    alt="gif of person with vr headset trapped in a net"
+                  />
+                </div>
+                <div class="fragment tile">
+                  <p>Breezy refactoring</p>
+                  <img
+                    src="img/breezy.gif"
+                    alt="gif of cow with a wig blowing in the breeze"
+                  />
+                </div>
+              </div>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div
+              class="content-box"
+              style="justify-content: center; align-items: center;"
+            >
+              <blockquote
+                class="twitter-tweet"
+                data-lang="en"
+                data-theme="dark"
+              >
+                <p lang="en" dir="ltr">
+                  Why are tests important?<br /><br />This is what happened with
+                  what I thought was a simple change. Turns out I had put
+                  something on the wrong side of an `if` statement, and it only
+                  broke under certain conditions.<br /><br />It did not generate
+                  any language errors, and none of my linters complained.
+                  <a href="https://t.co/uwGg1jQoKI"
+                    >pic.twitter.com/uwGg1jQoKI</a
+                  >
+                </p>
+                &mdash; Chris Tankersley (@dragonmantank)
+                <a
+                  href="https://twitter.com/dragonmantank/status/1184158104981778433?ref_src=twsrc%5Etfw"
+                  >October 15, 2019</a
+                >
+              </blockquote>
+              <script
+                async
+                src="https://platform.twitter.com/widgets.js"
+                charset="utf-8"
+              ></script>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Test Pyramid</h1>
+              <div class="fragment">
+                <img
+                  src="img/test-pyramid.png"
+                  alt="test pyramid from Mike Cohn's Succeeding with Agile book"
+                  style="max-width: 80%;"
+                />
+              </div>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <p>
+                Your best bet is to remember two things from Cohn’s original
+                test pyramid:
+              </p>
+              <ol>
+                <li>Write tests with different granularity</li>
+                <li>
+                  The more high-level you get the fewer tests you should have
+                </li>
+              </ol>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded" style="flex:0;">Test Ice Cream Cone</h1>
+              <div style="flex:1;" class="fragment">
+                <img
+                  src="img/testing-icecream-cone.jpg"
+                  alt="test ice cream cone"
+                  style="max-height: 500px;"
+                />
+              </div>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">What do you care about?</h1>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">
+                Lessons learnt on different types of testing
+              </h1>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Disclaimer:</h1>
+              <p>Your mileage may vary.</p>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Code Formatting:</h1>
+              <p>
+                It lets you stop arguing about style while having consistent
+                code, in a nutshell.
+              </p>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">
+                <span style="font-size: 2rem;">🛠</span> Prettier
+              </h1>
+              <img
+                src="img/prettier-logo.png"
+                alt="Prettier logo"
+                style="max-width: 300px; margin: 0 auto;"
+              />
+              <a
+                href="https://prettier.io/docs/en/why-prettier.html"
+                target="_blank"
+                >🔗 Why Prettier?</a
+              >
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box" style="background-image: url(img/prettier-example.gif); background-size: cover;">
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Linting:</h1>
+              <p>
+                It lets you enforce coding principles throughout your codebase,
+                to make your code more readable and avoig bugs.
+              </p>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">
+                <span style="font-size: 2rem;">🛠</span> ESLint
+              </h1>
+              <img
+                src="img/eslint.svg"
+                alt="eslint logo"
+                style="max-width: 250px; margin: 0 auto;"
+              />
+              <p>Most widely adopted linter out there.</p>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">ESLint example</h1>
+              <img src="img/eslint2.png" alt="eslint showing an error on emoji accessibility" />
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <img src="img/eslint1.png" alt="eslint showing an error on import order" />
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Prettier + ESLint = 💛</h1>
+              <p>
+                Also, config is hard, so use someone else's if you can and
+                adjust as needed 😅
+              </p>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Unit testing</h1>
+              <div>
+                <img
+                  src="img/jest.png"
+                  alt="jest logo"
+                  style="max-height: 100px;"
+                />
+                <p>Jest</p>
+              </div>
+              <p>
+                Modern tool, does a lot out of the box - assertion library,
+                coverage, mocking, snapshots.
+              </p>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+                <img src="img/component.png" alt="navigation component code" />
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <img src="img/unit-test.png" alt="unit tests for a navigation component" />
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">🔥 Hot take 🔥</h1>
+              <p class="fragment">
+                I'm not a big fan of snapshot testing, it makes developers
+                complacent and inattentive.
+              </p>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">T 👏 D 👏 D 👏</h1>
+              <p class="fragment">
+                Yes, friends. Get ready for some indoctrination.
+              </p>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">What's TDD?</h1>
+              <p>It's a practice where you write a test first, and only enough code to satisfy that test.</p>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Red · green · refactor</h1>
+              <img src="img/red-green-refactor.png" alt="red green refactor cycle" style="max-width: 65%; margin: 0 auto;" />
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Pros:</h1>
+              <ul>
+                <li class="fragment">Dopamine rush of passing test</li>
+                <li class="fragment">
+                  You can trust the test - seen it fail
+                </li>
+                <li class="fragment">Your code is already testable</li>
+                <li class="fragment">
+                  Define the perfect API for your component
+                </li>
+                <li class="fragment">Better architecture</li>
+                <li class="fragment">Break down solution into small parts</li>
+                <li class="fragment">Clarify requirements early</li>
+                <li class="fragment">Fun pairing</li>
+                <li class="fragment">You only have to think once</li>
+              </ul>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Cons:</h1>
+              <ul>
+                <li class="fragment">It's hard to get started</li>
+              </ul>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">🔥 Hot take 🔥</h1>
+              <p class="fragment">100% test coverage is not a good thing.</p>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Know when to stop</h1>
+              <p style="font-size: 3rem;">🛑✋</p>
+              <p>
+                You want to make sure you're not testing someone else's code.
+              </p>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Stubbing & mocking</h1>
+              <img src="img/mocking.png" alt="example of mocked out module" style="max-width: 65%; margin: 0 auto;" />
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Component testing</h1>
+              <p>
+                Testing integration between your service and its nearest
+                neighbour.
+              </p>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">
+                <span style="font-size: 2rem;">🛠</span> Cypress
+              </h1>
+              <p>Low effort end to end testing framework.</p>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <img src="img/cypress-test.png" alt="screenshot of my cypress test file" />
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <video autoplay loop>
+                <source src="img/navigation.js.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Write one get one free</h1>
+              <p>
+                In web applications, component testing can be reused for
+                integration testing.
+              </p>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Visual testing</h1>
+              <ul>
+                <li class="fragment">Galen</li>
+                <li class="fragment">Percy</li>
+              </ul>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Accessibility testing</h1>
+              <p>Cypress-axe is a plugin that checks your app for common accessibility faults.</p>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Mutation testing</h1>
+              <p>Stryker mutator allows you to improve your tests by changing your code.</p>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Challenges</h1>
+              <ul>
+                <li class="fragment">Small companies</li>
+                <li class="fragment">Big companies</li>
+              </ul>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Takeaways</h1>
+              <ol>
+                <li class="fragment">Find out what you care about</li>
+                <li class="fragment">Tests your critical paths</li>
+                <li class="fragment">Add more tests over time</li>
+                <li class="fragment">T 👏 D 👏 D 👏</li>
+              </ol>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box">
+              <h1 class="shaded">Thank you! 💛✨</h1>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+          <section>
+            <div class="content-box links">
+              <h1 class="shaded">Links</h1>
+              <a target="_blank" href="https://martinfowler.com/articles/practical-test-pyramid.html#TheTestPyramid">🔗 The practical test pyramid - Ham Vocke</a>
+              <a target="_blank" href="https://jestjs.io/docs/en/getting-started">🔗 Jest docs</a>
+              <a target="_blank" href="https://www.youtube.com/watch?v=SDoq37lXHEw">🔗 Test driven component development - Tim Doherty</a>
+              <a target="_blank" href="https://docs.cypress.io">🔗 Cypress Docs</a>
+              <a target="_blank" href="https://www.youtube.com/watch?v=xVmUvMkBHas">🔗 Live accessibility audit - Marcy Sutton</a>
+              <a target="_blank" href="https://www.deque.com/axe/">🔗 Axe</a>
+              <a target="_blank" href="https://stryker-mutator.io/">🔗 Stryker mutator</a>
+            </div>
+            <p class="twitter-handle">@CarolSaysThings</p>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../lib/js/head.min.js"></script>
+    <script src="../../js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        width: 960,
+        height: 700,
+        transition: "slide",
+        backgroundTransition: "slide",
+        center: false,
+        dependencies: [
+          { src: "../../plugin/markdown/marked.js" },
+          { src: "../../plugin/markdown/markdown.js" },
+          { src: "../../plugin/notes/notes.js", async: true },
+          {
+            src: "../../plugin/highlight/highlight.js",
+            async: true,
+            callback: function() {
+              hljs.initHighlightingOnLoad();
+            }
+          }
+        ],
+        slideNumber: true,
+        history: true
+      });
+    </script>
+  </body>
+</html>
