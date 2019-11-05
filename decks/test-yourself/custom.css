@@ -1,6 +1,5 @@
 @import url("../../fonts/victormono/victormono.css");
 @import url("../../fonts/staatliches/staatliches.css");
-
 html {
   font-size: 40px;
 }
@@ -95,4 +94,8 @@ body {
   right: 10px;
   padding: 5px;
   border-radius: 3px;
+}
+
+.reveal .slides section .links a {
+  font-size: 0.7rem;
 }
