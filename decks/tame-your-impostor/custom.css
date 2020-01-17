@@ -1,0 +1,101 @@
+@import url("../../fonts/victormono/victormono.css");
+@import url("../../fonts/staatliches/staatliches.css");
+html {
+  font-size: 40px;
+}
+
+body {
+  font-family: "VictorMono", Helvetica, sans-serif;
+  color: #fff;
+  background-color: #f7c1bb;
+}
+
+.reveal .controls button {
+  color: #a04668;
+}
+
+.reveal {
+  background-image: url(img/pattern.svg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reveal .slides section {
+  background-color: #a04668;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 12px 12px 2px 1px rgba(76, 96, 133, 0.6);
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.reveal .slides section h1 {
+  font-family: "Staatliches", Helvetica, sans-serif;
+  color: #ffba08;
+  font-size: 3rem;
+}
+
+.shaded {
+  text-shadow: 5px 5px #3f88c5;
+}
+
+.reveal .slides section .content-box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.reveal .slides section .content-box ol {
+  list-style-position: inside;
+}
+
+.reveal .slides section .content-box li::marker {
+  color: #ffba08;
+  text-shadow: 2px 2px #3f88c5;
+}
+
+.reveal .slides section .content-box a {
+  color: inherit;
+}
+
+.reveal .slides section .tiles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.reveal .slides section .tile {
+  background-color: #ffba08;
+  max-width: 50%;
+  margin: 10px;
+}
+
+.reveal .slides section .tile p {
+  margin: 10px;
+  color: #032b43;
+}
+
+.reveal .slides section img {
+  margin: 3px;
+  max-width: -moz-available;
+  max-width: -webkit-fill-available;
+  max-width: fill-available;
+  max-height: inherit;
+}
+
+.reveal .slides section .twitter-handle {
+  font-size: 0.6rem;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.reveal .slides section .links a {
+  font-size: 0.7rem;
+}
