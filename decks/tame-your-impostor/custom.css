@@ -99,3 +99,11 @@ body {
 .reveal .slides section .links a {
   font-size: 0.7rem;
 }
+
+.reveal .slides section .half-and-half {
+  display: flex;
+}
+
+.reveal .slides section .half-and-half .half img {
+  max-height: fit-content;
+}
