@@ -96,14 +96,26 @@ body {
   border-radius: 3px;
 }
 
+.reveal .slides section .twitter-handle.dark {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
 .reveal .slides section .links a {
   font-size: 0.7rem;
 }
 
 .reveal .slides section .half-and-half {
   display: flex;
+  height: 100%;
+  flex-direction: row;
+}
+
+.reveal .slides section .half-and-half .half {
+  height: 100%;
+  max-width: 50%;
 }
 
 .reveal .slides section .half-and-half .half img {
-  max-height: fit-content;
+  max-width: 100%;
+  max-height: 100%;
 }
