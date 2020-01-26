@@ -79,6 +79,12 @@ body {
   color: #032b43;
 }
 
+.reveal .slides section img {
+  margin: 3px;
+  max-width: -moz-available;
+  max-width: fill-available;
+}
+
 .reveal .slides section img.polaroid {
   border: #fff solid 10px;
   border-bottom-width: 50px;
