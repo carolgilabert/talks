@@ -83,6 +83,7 @@ body {
 }
 
 .reveal .slides section .headshot {
+  margin-left: 30px;
   background-color: blanchedalmond;
   padding: 20px;
   border-radius: 50%;
